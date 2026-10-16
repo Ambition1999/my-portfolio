@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#f8f9f6">
+    <meta name="description" content="Lê Chí Toàn — Fullstack Developer với 5 năm kinh nghiệm. Giao diện chỉn chu, hệ thống vững chắc và sản phẩm có giá trị.">
+    <title>Lê Chí Toàn — Fullstack Developer</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%2317211b'/%3E%3Ctext x='10' y='43' font-family='monospace' font-weight='bold' font-size='30' fill='%23b8ef96'%3Elt.%3C/text%3E%3C/svg%3E">
+    <!-- Blocking by design: restore the theme before the stylesheet is painted. -->
+    <script src="./assets/js/theme-init.js"></script>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="./assets/js/config.js" defer></script>
+    <script src="./assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <!-- All icons are inline SVG; the page works offline. -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="sr-only" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 0 1 14 0Z"/><circle cx="12" cy="10" r="2"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-15-2 18"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 10 5-10 5L2 8l10-5ZM2 12l10 5 10-5M2 16l10 5 10-5"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/></symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="3"/><path d="m6 8 4 4-4 4m7 0h5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4 1-4-2-6-2m12 5v-4c0-1 .1-1.7-.5-2.3 4-.4 6.5-2 6.5-6.2a5 5 0 0 0-1.4-3.5 5 5 0 0 0-.1-3.5S18 2 15 4a13 13 0 0 0-6 0C6 2 4.5 2.5 4.5 2.5A5 5 0 0 0 4.4 6 5 5 0 0 0 3 9.5c0 4.2 2.5 5.8 6.5 6.2C9 16.3 9 17 9 18v4"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.1M11 17v-7m0 3a3 3 0 0 1 6 0v4"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 2 10 5v10l-10 5-10-5V7l10-5Zm0 10L2 7m10 5 10-5M12 12v10M7 4.5l10 5"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5m-6 6 6-6 6 6"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V3H3v13h5"/></symbol>
+    </svg>
+    <a class="skip-link" href="#main">Đến nội dung chính</a>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Điều hướng chính">
+        <a class="logo" href="#home" aria-label="Lê Chí Toàn — Trang đầu"><span class="logo-mark"><span>lt<b>.</b></span></span> Lê Chí Toàn<span class="text-accent">.</span></a>
+        <div class="nav-links" id="nav-links">
+          <a href="#about">Giới thiệu</a>
+          <a href="#skills">Kỹ năng</a>
+          <a href="#projects">Dự án</a>
+          <a href="#contact">Liên hệ</a>
+        </div>
+        <div class="nav-actions">
+          <button class="icon-button" id="theme-toggle" type="button" aria-label="Bật giao diện tối" aria-pressed="false"><svg class="icon theme-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="icon theme-moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+          <a class="nav-contact" href="#contact">Cùng kết nối <svg class="icon icon-14" aria-hidden="true"><use href="#i-external"/></svg></a>
+          <button class="icon-button menu-toggle" id="menu-toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Mở menu"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></button>
+        </div>
+      </nav>
+    </header>
+    <main id="main">
+      <section id="home" class="hero container" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow">Fullstack Developer</div>
+          <p class="intro">Xin chào, tôi là <strong>Toàn</strong> <span aria-hidden="true">✳</span></p>
+          <h1 id="hero-title">Từ ý tưởng.<br>Đến <span class="highlight">sản phẩm.</span></h1>
+          <p class="hero-description"><strong>5 năm kết nối giao diện và hệ thống.</strong><br>Tôi biến những bài toán phức tạp thành trải nghiệm đơn giản — với mã nguồn rõ ràng và tư duy sản phẩm.</p>
+          <div class="button-row">
+            <a class="button primary" href="#projects">Xem dự án <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="button" href="#contact">Liên hệ <svg class="icon icon-16" aria-hidden="true"><use href="#i-external"/></svg></a>
+          </div>
+          <div class="hero-meta">
+            <span><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg> TP. Hồ Chí Minh, Việt Nam</span>
+            <span class="meta-divider" aria-hidden="true"></span>
+            <a href="https://github.com/Ambition1999" target="_blank" rel="noopener noreferrer"><span><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> @Ambition1999 <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></span></a>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Minh họa tư duy lập trình: rõ ràng, hữu ích và dễ bảo trì" role="img">
+          <div class="art-grid" aria-hidden="true"></div>
+          <div class="art-orbit" aria-hidden="true"></div>
+          <div class="floating-note top">
+            <span class="note-icon"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span>
+            <div>
+              <strong>Đơn giản trong trải nghiệm.</strong>
+              <small>Vững chắc ở bên trong.</small>
+            </div>
+          </div>
+          <div class="code-window" aria-hidden="true">
+            <div class="window-bar">
+              <i class="window-dot"></i>
+              <i class="window-dot"></i>
+              <i class="window-dot"></i>
+              <span class="window-filename">developer.ts</span>
+            </div>
+            <div class="code-body">
+              <div class="code-line"><span class="line-number">01</span><span class="code-comment">// Ideas into meaningful products.</span></div>
+              <div class="code-line"><span class="line-number">02</span><span><span class="code-purple">const</span> developer = {</span></div>
+              <div class="code-line"><span class="line-number">03</span><span>  name: <span class="code-green">'Lê Chí Toàn'</span>,</span></div>
+              <div class="code-line"><span class="line-number">04</span><span>  role: <span class="code-green">'Fullstack Developer'</span>,</span></div>
+              <div class="code-line"><span class="line-number">05</span><span>  experience: <span class="code-peach">5</span>,</span></div>
+              <div class="code-line"><span class="line-number">06</span><span>  mindset: [</span></div>
+              <div class="code-line"><span class="line-number">07</span><span>    <span class="code-green">'Think clearly'</span>,</span></div>
+              <div class="code-line"><span class="line-number">08</span><span>    <span class="code-green">'Build thoughtfully'</span>,</span></div>
+              <div class="code-line"><span class="line-number">09</span><span>    <span class="code-green">'Keep improving'</span></span></div>
+              <div class="code-line"><span class="line-number">10</span><span>  ]</span></div>
+              <div class="code-line"><span class="line-number">11</span><span>};</span></div>
+            </div>
+            <div class="window-footer">
+              <span>⑂ main &nbsp; ✓ clean code</span>
+              <span>TypeScript &nbsp; UTF-8</span>
+            </div>
+          </div>
+          <div class="floating-note bottom">
+            <span class="note-icon"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span>
+            <div>
+              <strong>Frontend ↔ Backend</strong>
+              <small>Một góc nhìn xuyên suốt sản phẩm.</small>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="stack-strip container" aria-label="Công nghệ sử dụng trong các repository">
+        <span>Từ giao diện<br> đến triển khai</span>
+        <div class="stack-list">
+          <span><b class="stack-symbol" aria-hidden="true">⚛</b> React</span>
+          <span><b class="stack-symbol" aria-hidden="true">TS</b> TypeScript</span>
+          <span><b class="stack-symbol" aria-hidden="true">.NET</b> C#</span>
+          <span><svg class="icon" aria-hidden="true"><use href="#i-db"/></svg> SQL Server</span>
+          <span><svg class="icon" aria-hidden="true"><use href="#i-box"/></svg> Docker</span>
+        </div>
+      </div>
+      <section class="section about container" id="about" aria-labelledby="about-title">
+        <div>
+          <div class="eyebrow">01 / Giới thiệu</div>
+          <h2 id="about-title">Viết code có chủ đích.<br>Tạo giá trị thực tế.</h2>
+          <div class="experience">
+            <div class="experience-number">05<span>+</span></div>
+            <div class="experience-label">
+              Năm kinh nghiệm
+              <br>
+              phát triển phần mềm
+            </div>
+          </div>
+        </div>
+        <div class="about-copy">
+          <p class="about-lead">Tôi quan tâm đến điều xảy ra sau mỗi dòng code: một thao tác thuận tiện hơn, một quy trình gọn hơn, một vấn đề được giải quyết.</p>
+          <p>Tôi là Lê Chí Toàn, Fullstack Developer tại TP. Hồ Chí Minh. Với 5 năm kinh nghiệm, tôi theo đuổi cách xây dựng phần mềm cân bằng giữa trải nghiệm người dùng, tính rõ ràng của mã nguồn và khả năng bảo trì.</p>
+          <p>Từ ứng dụng quản lý bằng .NET, website thương mại đến thực hành container hóa, tôi luôn muốn hiểu toàn bộ hành trình của sản phẩm. Giải pháp tốt bắt đầu từ việc hiểu đúng bài toán, rồi chọn công nghệ phù hợp.</p>
+          <ul class="principles">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Rõ ràng trước phức tạp</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Hiểu bài toán trước công nghệ</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Luôn học và cải tiến</li>
+          </ul>
+        </div>
+      </section>
+      <section class="section skills container" id="skills" aria-labelledby="skills-title">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">02 / Kỹ năng</div>
+            <h2 id="skills-title">Bộ công cụ của tôi.</h2>
+          </div>
+          <p class="section-note">Công nghệ phục vụ bài toán.<br>Mỗi lớp của sản phẩm cần một lựa chọn phù hợp.</p>
+        </div>
+        <!-- Suggested skills from public repositories. Adjust to reflect your current expertise. -->
+        <div class="skills-grid">
+          <article class="skill-group">
+            <div class="skill-top">
+              <span class="skill-icon"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span>
+              <span class="skill-number">01</span>
+            </div>
+            <h3>Frontend</h3>
+            <div class="skill-tags">
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>JavaScript</span>
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>Responsive UI</span>
+            </div>
+          </article>
+          <article class="skill-group">
+            <div class="skill-top">
+              <span class="skill-icon"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span>
+              <span class="skill-number">02</span>
+            </div>
+            <h3>Backend</h3>
+            <div class="skill-tags">
+              <span>C# / .NET</span>
+              <span>ASP.NET MVC</span>
+              <span>Node.js</span>
+              <span>Entity Framework</span>
+            </div>
+          </article>
+          <article class="skill-group">
+            <div class="skill-top">
+              <span class="skill-icon"><svg class="icon" aria-hidden="true"><use href="#i-db"/></svg></span>
+              <span class="skill-number">03</span>
+            </div>
+            <h3>Database</h3>
+            <div class="skill-tags">
+              <span>SQL Server</span>
+              <span>T-SQL</span>
+              <span>Data Modeling</span>
+              <span>Relational Database</span>
+            </div>
+          </article>
+          <article class="skill-group">
+            <div class="skill-top">
+              <span class="skill-icon"><svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg></span>
+              <span class="skill-number">04</span>
+            </div>
+            <h3>Tools / DevOps</h3>
+            <div class="skill-tags">
+              <span>Git / GitHub</span>
+              <span>Docker</span>
+              <span>Docker Compose</span>
+              <span>Nginx</span>
+              <span>Visual Studio</span>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="section container" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">03 / Dự án chọn lọc</div>
+            <h2 id="projects-title">Một vài điều tôi đã xây dựng.</h2>
+          </div>
+          <a class="text-link" href="https://github.com/Ambition1999?tab=repositories" target="_blank" rel="noopener noreferrer">Tất cả repository <svg class="icon icon-16" aria-hidden="true"><use href="#i-external"/></svg></a>
+        </div>
+        <div class="projects-grid">
+          <article class="project">
+            <div class="project-visual coffee" role="img" aria-label="Minh họa giao diện quản lý quán cà phê, không phải ảnh chụp ứng dụng thực tế">
+              <span class="mock-label">Minh họa giao diện</span>
+              <div class="mini-app" aria-hidden="true">
+                <div class="mini-top">
+                  <span>☕ Cafe Manager</span>
+                  <span class="mini-dots">•••</span>
+                </div>
+                <div class="coffee-layout">
+                  <div class="mini-sidebar">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                  </div>
+                  <div class="mini-content">
+                    <div class="mini-caption">
+                      <span>Sơ đồ bàn</span>
+                      <span>+ Đơn mới</span>
+                    </div>
+                    <div class="tables">
+                      <div class="table-tile">Bàn 01</div>
+                      <div class="table-tile busy">Bàn 02</div>
+                      <div class="table-tile">Bàn 03</div>
+                      <div class="table-tile busy">Bàn 04</div>
+                      <div class="table-tile">Bàn 05</div>
+                      <div class="table-tile">Bàn 06</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-category">
+              <span>Desktop application</span>
+              <span>01</span>
+            </div>
+            <h3>Cafe Store Management</h3>
+            <p>Ứng dụng quản lý quán cà phê trên Windows, tổ chức mã nguồn theo các lớp giao diện và xử lý nghiệp vụ, cùng cơ sở dữ liệu riêng.</p>
+            <div class="project-tags">
+              <span class="tag">C#</span>
+              <span class="tag">.NET</span>
+              <span class="tag">SQL Server</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Ambition1999/CafeStoreManagement_DesktopApps" target="_blank" rel="noopener noreferrer" aria-label="GitHub dự án Cafe Store Management"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Mã nguồn</a>
+              <a href="https://github.com/Ambition1999/CafeStoreManagement_Database" target="_blank" rel="noopener noreferrer">Database <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
+            </div>
+          </article>
+          <article class="project">
+            <div class="project-visual laptop" role="img" aria-label="Minh họa website bán laptop, không phải ảnh chụp ứng dụng thực tế">
+              <span class="mock-label">Minh họa giao diện</span>
+              <div class="mini-app" aria-hidden="true">
+                <div class="mini-top">
+                  <span>laptop.store</span>
+                  <span class="mini-dots">⌕ &nbsp; ▢</span>
+                </div>
+                <div class="mini-shop">
+                  <div class="mini-shop-copy">
+                    <strong>Find your<br>next workspace.</strong>
+                    <span>Khám phá ngay ↗</span>
+                  </div>
+                  <div class="laptop-drawing">
+                    <div class="laptop-screen"></div>
+                    <div class="laptop-base"></div>
+                  </div>
+                </div>
+                <div class="mini-shop-bottom">
+                  <span>Hiệu năng</span>
+                  <span>Thiết kế</span>
+                  <span>Trải nghiệm</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-category">
+              <span>Web application</span>
+              <span>02</span>
+            </div>
+            <h3>Laptop Business Website</h3>
+            <p>Website bán laptop với các trang sản phẩm, giỏ hàng và khu vực quản trị đơn hàng. Xây dựng trên ASP.NET MVC với Entity Framework.</p>
+            <div class="project-tags">
+              <span class="tag">ASP.NET MVC</span>
+              <span class="tag">C#</span>
+              <span class="tag">Entity Framework</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Ambition1999/Laptop-BusinessWebsite" target="_blank" rel="noopener noreferrer" aria-label="GitHub dự án Laptop Business Website"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Mã nguồn <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
+              <span class="no-demo">Chưa có demo công khai</span>
+            </div>
+          </article>
+          <article class="project">
+            <div class="project-visual docker" role="img" aria-label="Sơ đồ Docker Compose điều phối Node.js API và Nginx">
+              <span class="mock-label">Sơ đồ hệ thống</span>
+              <div class="infra" aria-hidden="true">
+                <div class="infra-node">
+                  <svg class="icon"><use href="#i-box"/></svg>
+                  Docker Compose
+                </div>
+                <div class="infra-connector"></div>
+                <div class="infra-branches">
+                  <div class="infra-node">
+                    <svg class="icon"><use href="#i-code"/></svg>
+                    Node.js API
+                  </div>
+                  <div class="infra-node">
+                    <svg class="icon"><use href="#i-layers"/></svg>
+                    Nginx Website
+                  </div>
+                </div>
+                <div class="infra-command">$ docker compose up --build</div>
+              </div>
+            </div>
+            <div class="project-category">
+              <span>DevOps / Thực hành</span>
+              <span>03</span>
+            </div>
+            <h3>Dockerized Course Service</h3>
+            <p>Dự án thực hành container hóa API khóa học Node.js và website tĩnh. Docker Compose kết nối các dịch vụ, Nginx phục vụ giao diện.</p>
+            <div class="project-tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">Docker Compose</span>
+              <span class="tag">Nginx</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Ambition1999/DockerTutorial" target="_blank" rel="noopener noreferrer" aria-label="GitHub dự án Dockerized Course Service"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Mã nguồn</a>
+              <a href="https://github.com/Ambition1999/DockerTutorial#getting-started" target="_blank" rel="noopener noreferrer">Cách chạy <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="contact container" id="contact" aria-labelledby="contact-title">
+        <div class="contact-panel">
+          <div>
+            <div class="eyebrow">04 / Kết nối</div>
+            <h2 id="contact-title">Ý tưởng tiếp theo,<br>cùng xây dựng nhé<span class="text-accent">.</span></h2>
+            <p class="contact-description">Bạn có một bài toán thú vị, một cơ hội hợp tác, hay chỉ muốn trò chuyện về công nghệ? Tôi rất vui được kết nối.</p>
+            <dl class="contact-methods">
+              <div class="contact-method">
+                <dt><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> Email</dt>
+                <dd id="email-value" class="pending">Đang cập nhật</dd>
+              </div>
+              <div class="contact-method">
+                <dt><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</dt>
+                <dd id="linkedin-value" class="pending">Đang cập nhật</dd>
+              </div>
+              <div class="contact-method">
+                <dt><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> GitHub</dt>
+                <dd><a href="https://github.com/Ambition1999" target="_blank" rel="noopener noreferrer">@Ambition1999 <svg class="icon icon-13" aria-hidden="true"><use href="#i-external"/></svg></a></dd>
+              </div>
+            </dl>
+          </div>
+          <form class="contact-form" id="contact-form" aria-label="Soạn lời nhắn" aria-describedby="form-hint">
+            <div class="form-row">
+              <div>
+                <label for="visitor-name">Tên của bạn <span aria-hidden="true">*</span></label>
+                <input id="visitor-name" name="name" autocomplete="name" placeholder="Tên của bạn" required maxlength="100">
+              </div>
+              <div>
+                <label for="visitor-email">Email <span aria-hidden="true">*</span></label>
+                <input id="visitor-email" name="email" type="email" autocomplete="email" placeholder="ban@example.com" required maxlength="254">
+              </div>
+            </div>
+            <div>
+              <label for="visitor-message">Lời nhắn <span aria-hidden="true">*</span></label>
+              <textarea id="visitor-message" name="message" placeholder="Chia sẻ một chút về ý tưởng của bạn…" required minlength="10" maxlength="3000" rows="4"></textarea>
+            </div>
+            <div class="form-footer">
+              <button class="button primary" type="submit" id="contact-submit"><span id="submit-label">Sao chép lời nhắn</span><svg class="icon icon-15" aria-hidden="true"><use href="#i-copy" id="submit-icon"/></svg></button>
+              <p class="form-hint" id="form-hint">Email đang cập nhật. Bạn có thể soạn và sao chép lời nhắn tại đây.</p>
+            </div>
+            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>© <span id="year">2026</span> Lê Chí Toàn</span>
+        <span class="footer-note">Được viết với sự chỉn chu <svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></span>
+        <a class="back-top" href="#home">Về đầu trang <svg class="icon icon-14" aria-hidden="true"><use href="#i-up"/></svg></a>
+      </div>
+    </footer>
+    <noscript>
+      <p class="no-script-notice">Bật JavaScript để đổi giao diện và sao chép lời nhắn. Nội dung và các liên kết vẫn hoạt động.</p>
+    </noscript>
+  </body>
+</html>

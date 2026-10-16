@@ -1,0 +1,24 @@
+{
+  "name": "le-chi-toan-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio cá nhân của Lê Chí Toàn — Fullstack Developer.",
+  "type": "module",
+  "license": "UNLICENSED",
+  "author": "Lê Chí Toàn",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ambition1999/my-portfolio.git"
+  },
+  "homepage": "https://github.com/Ambition1999/my-portfolio#readme",
+  "bugs": {
+    "url": "https://github.com/Ambition1999/my-portfolio/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node scripts/dev-server.mjs",
+    "check": "node --check scripts/dev-server.mjs && node --check scripts/check.mjs && node scripts/check.mjs"
+  }
+}

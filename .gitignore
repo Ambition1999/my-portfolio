@@ -1,0 +1,42 @@
+# Dependencies and package-manager caches
+node_modules/
+.npm/
+.pnpm-store/
+
+# Generated output and local reports
+dist/
+build/
+coverage/
+playwright-report/
+test-results/
+.cache/
+*.tsbuildinfo
+
+# Local environment files; keep a documented example if one is added later
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Editor-specific settings and OS metadata
+.vscode/
+.idea/
+.vs/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local hosting / automation state
+.vercel/
+.netlify/
+.wrangler/
+.codex/
+.aws/
