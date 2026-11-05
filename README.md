@@ -64,6 +64,7 @@ my-portfolio/
 │   └── DEPLOYMENT.md      # Hướng dẫn đưa website lên hosting tĩnh
 ├── scripts/
 │   ├── check.mjs          # Kiểm tra hai trang HTML, tài nguyên và JavaScript
+│   ├── build.mjs          # Đóng gói website tĩnh vào dist/
 │   └── dev-server.mjs     # Server local, không cần thư viện ngoài
 ├── .editorconfig          # UTF-8, LF, thụt dòng 2 dấu cách
 ├── .gitattributes         # Chuẩn hóa xuống dòng khi dùng Git
@@ -74,6 +75,7 @@ my-portfolio/
 ├── en.html                # Portfolio tiếng Anh
 ├── package.json           # Metadata và các lệnh phát triển
 ├── package-lock.json      # Lockfile npm được theo dõi trong Git
+├── vercel.json            # Cấu hình build và đầu ra trên Vercel
 └── README.md
 ```
 
@@ -91,6 +93,7 @@ Hai trang dùng đường dẫn tương đối như `./en.html` và `./assets/cs
 | --- | --- |
 | `npm run dev` | Mở server local ở cổng 3000 hoặc cổng từ `PORT` |
 | `npm run check` | Kiểm tra metadata, ID, thứ tự các mục, liên kết đổi ngôn ngữ và tài nguyên của cả hai trang cùng cú pháp JavaScript |
+| `npm run build` | Đóng gói hai trang và `assets/` vào `dist/` |
 
 `npm run check` không thay thế trình kiểm tra HTML đầy đủ hoặc kiểm thử trên trình duyệt. Kiểm tra này không xác thực tình trạng hoạt động của các liên kết bên ngoài.
 
@@ -102,6 +105,7 @@ Cập nhật cùng một thông tin trong `index.html` và `en.html`, bao gồm 
 
 ```bash
 npm run check
+npm run build
 ```
 
 Sau đó kiểm tra thủ công:
@@ -111,11 +115,11 @@ Sau đó kiểm tra thủ công:
 - Đổi ngôn ngữ qua HTTP và khi mở file trực tiếp. Kiểm tra lựa chọn giao diện khi đổi trang qua HTTP.
 - Tắt JavaScript và kiểm tra nội dung, điều hướng và liên kết GitHub vẫn truy cập được.
 
-Workflow `Repository checks` chạy cùng lệnh khi push hoặc mở pull request. Workflow chỉ kiểm tra mã nguồn, không triển khai website. Tham khảo [actions/checkout](https://github.com/actions/checkout) và [actions/setup-node](https://github.com/actions/setup-node) khi cập nhật cấu hình CI.
+Workflow `Repository checks` chạy kiểm tra và build khi push hoặc mở pull request. Tham khảo [actions/checkout](https://github.com/actions/checkout) và [actions/setup-node](https://github.com/actions/setup-node) khi cập nhật cấu hình CI.
 
 ## Triển khai
 
-Đưa `index.html`, `en.html` và toàn bộ thư mục `assets/` lên cùng thư mục công khai của hosting tĩnh. Xem [DEPLOYMENT.md](docs/DEPLOYMENT.md).
+Vercel phục vụ gói tĩnh trong `dist/` với bản tiếng Việt ở `/` và bản tiếng Anh ở `/en.html`. Xem quy trình kiểm tra bản production trước khi gắn domain. [Hướng dẫn triển khai](docs/DEPLOYMENT.md)
 
 ## Đóng góp và giấy phép
 
