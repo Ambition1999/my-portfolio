@@ -1,10 +1,14 @@
 import { createServer } from 'node:http';
 import { readFile, realpath } from 'node:fs/promises';
 import { extname, isAbsolute, relative, resolve, sep } from 'node:path';
-import { fileURLToPath } from 'node:url';
 
-// Only index.html and public assets are served, never repository/config files.
-const entrypoint = new URL('../index.html', import.meta.url);
+// Only the two HTML pages and public assets are served.
+const vietnamesePage = new URL('../index.html', import.meta.url);
+const entrypoints = new Map([
+  ['/', vietnamesePage],
+  ['/index.html', vietnamesePage],
+  ['/en.html', new URL('../en.html', import.meta.url)],
+]);
 const assetRoot = await realpath(new URL('../assets/', import.meta.url));
 const contentTypes = new Map([
   ['.css', 'text/css; charset=utf-8'],
@@ -48,23 +52,23 @@ const server = createServer(async (request, response) => {
     return;
   }
 
-  const isEntry = pathname === '/' || pathname === '/index.html';
+  const entrypoint = entrypoints.get(pathname);
   const isAsset = pathname.startsWith('/assets/')
     && !pathname.includes('\\')
     && !pathname.includes('\0')
     && !pathname.split('/').some((segment) => segment.startsWith('.'));
-  const contentType = isEntry
+  const contentType = entrypoint
     ? 'text/html; charset=utf-8'
     : contentTypes.get(extname(pathname).toLowerCase());
 
-  if ((!isEntry && !isAsset) || !contentType) {
+  if ((!entrypoint && !isAsset) || !contentType) {
     response.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
     response.end(request.method === 'HEAD' ? undefined : 'Not found');
     return;
   }
 
   try {
-    let filename = fileURLToPath(entrypoint);
+    let filename = entrypoint;
     if (isAsset) {
       filename = await realpath(resolve(assetRoot, pathname.slice('/assets/'.length)));
       const assetPath = relative(assetRoot, filename);
@@ -97,8 +101,9 @@ server.on('error', (error) => {
 });
 
 server.listen(port, '127.0.0.1', () => {
-  console.log(`Portfolio: http://127.0.0.1:${port}`);
-  console.log('Refresh the browser after editing index.html. Press Ctrl+C to stop.');
+  console.log(`Tiếng Việt: http://127.0.0.1:${port}/`);
+  console.log(`English: http://127.0.0.1:${port}/en.html`);
+  console.log('Refresh the browser after editing either HTML page. Press Ctrl+C to stop.');
 });
 
 for (const signal of ['SIGINT', 'SIGTERM']) {

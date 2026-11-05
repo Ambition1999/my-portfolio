@@ -24,3 +24,5 @@ jobs:
           package-manager-cache: false
       - name: Check portfolio and tooling
         run: npm run check
+      - name: Build static deployment
+        run: npm run build

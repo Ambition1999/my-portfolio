@@ -2,7 +2,7 @@
   "name": "le-chi-toan-portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "Portfolio cá nhân của Lê Chí Toàn — Fullstack Developer.",
+  "description": "Portfolio Việt–Anh của Lê Chí Toàn — Senior .NET Full Stack Developer.",
   "type": "module",
   "license": "UNLICENSED",
   "author": "Lê Chí Toàn",
@@ -19,6 +19,7 @@
   },
   "scripts": {
     "dev": "node scripts/dev-server.mjs",
+    "build": "node scripts/build.mjs",
     "check": "node --check scripts/dev-server.mjs && node --check scripts/check.mjs && node scripts/check.mjs"
   }
 }
