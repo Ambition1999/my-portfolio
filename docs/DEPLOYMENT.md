@@ -1,6 +1,6 @@
 # Triển khai website
 
-Website gồm `index.html` và thư mục `assets/` chứa CSS/JavaScript. Không cần build hoặc server ứng dụng. Công cụ trong `scripts/` chỉ phục vụ phát triển và kiểm tra.
+Website tĩnh gồm `index.html` cho tiếng Việt mặc định, `en.html` cho tiếng Anh và thư mục `assets/` dùng chung. Công cụ trong `scripts/` phục vụ phát triển và kiểm tra.
 
 ## Kiểm tra trước khi triển khai
 
@@ -8,7 +8,7 @@ Website gồm `index.html` và thư mục `assets/` chứa CSS/JavaScript. Khôn
 npm run check
 ```
 
-Xem lại tên, mô tả, kỹ năng, liên kết dự án và các trạng thái **Đang cập nhật** trước khi chia sẻ.
+Xem lại tiêu đề, mô tả, năng lực kỹ thuật, nội dung case ẩn danh và liên kết GitHub trên cả hai trang.
 
 ## GitHub Pages
 
@@ -26,37 +26,34 @@ Workflow `.github/workflows/check.yml` chỉ chạy kiểm tra. Cấu hình này
 
 ## Hosting tĩnh khác
 
-Tải `index.html` và toàn bộ thư mục `assets/` lên cùng thư mục công khai của hosting. Nếu nền tảng yêu cầu cấu hình:
+Tải `index.html`, `en.html` và toàn bộ thư mục `assets/` lên cùng thư mục công khai của hosting.
 
 | Trường | Giá trị |
 | --- | --- |
 | Loại dự án | Static HTML / Other |
 | Build command | Không có |
-| File đầu vào | `index.html` |
-| Thư mục public | Thư mục chứa `index.html` và `assets/` |
+| Trang mặc định | `index.html` |
+| Thư mục public | Thư mục chứa `index.html`, `en.html` và `assets/` |
 | Biến môi trường | Không cần |
 
-Với cách upload thủ công, giữ cấu trúc dưới đây; không cần đưa `.git`, tài liệu và các script phát triển lên hosting:
+Với cách upload thủ công, dùng cấu trúc dưới đây.
 
 ```text
 public/
 ├── index.html
+├── en.html
 └── assets/
     ├── css/
     │   └── styles.css
     └── js/
-        ├── config.js
         ├── main.js
         └── theme-init.js
 ```
 
-Nếu bổ sung ảnh/CV, upload kèm thư mục tương ứng bên trong `assets/`. Các URL dạng `./assets/...` được tính tương đối từ trang nên dùng được khi GitHub Pages phục vụ repository trong thư mục con.
+Các URL như `./en.html` và `./assets/...` được tính tương đối từ trang nên dùng được khi GitHub Pages phục vụ repository trong thư mục con.
 
 ## Xác minh sau khi xuất bản
 
-- Mở URL trên điện thoại và desktop.
-- Kiểm tra đổi sáng/tối và menu.
-- Mở từng liên kết GitHub/Demo.
-- Kiểm tra form đúng theo trạng thái cấu hình: sao chép lời nhắn hoặc mở ứng dụng email.
-
-Để form gửi trực tiếp và nhận thông báo mà không mở ứng dụng email, cần bổ sung backend hoặc dịch vụ form riêng; hosting tĩnh không tự cung cấp chức năng đó.
+- Mở cả hai trang trên điện thoại và desktop. Thử liên kết đổi ngôn ngữ theo cả hai chiều.
+- Kiểm tra menu, liên kết nội bộ và lựa chọn sáng/tối khi đổi trang.
+- Mở liên kết hồ sơ GitHub từ cả hai trang.
